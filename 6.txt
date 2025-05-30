@@ -1,0 +1,21 @@
+Exercício 6.1: No código do Barbeiro Sonolento, o que acontece se o semáforo mutex for
+removido?
+
+Haverá erro na contagem de valores, quando mais de um cliente acessar a mesma variável de cadeiras disponíveis
+Por ex.: dois clientes verificam que clientes_esperando == 4 (em um buffer de 5)
+Ambos decidem sentar, incrementando clientes_esperando
+Sem mutex, o valor pode ser sobrescrito incorretamente e clientes_esperando
+
+//
+
+Exercício 6.2: No Jantar dos Filósofos, qual é o impacto de permitir que um filósofo pegue
+um garfo e depois verifique se o outro está livre?
+
+Causa a espera circular, ou deadlock, no qual todos pegam um garfo e esperam outro ser liberado
+
+//
+
+Exercício 6.3: Por que usar notify() em vez de notifyAll() no código da fila Java pode causar
+starvation?
+
+Pode causar uma thread nunca ser acordada, assim como acordar sempre a mesma thread
